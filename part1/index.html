@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력결과</title>
+</head>
+<body>
+    <script>
+/* 
+- date: 08 August
+1. 3개의 숫자중에서 최솟값: if else문 사용 
+2. 삼각형 판별하기: 조건문을 사용하나 sum을 추가해서 비교
+*/         
+    // 1. 최솟값 
+        function solution(a, b, c) {
+            //비교해서 담을 변수를 선언해준다. 
+            let answer;
+            //a b 중에 작은값을 찾기 
+            if(a < b) {
+                answer = a
+            } else {
+                answer = b
+            } 
+            //answer에 담아서 a, b가 비교되서 담기고옴 
+            if(c < answer){
+                answer = c
+            }
+            //soultion()의 결과값 
+            return answer;
+        }
+        //여기다가 입력값을 넣고 함수호출하면 답을 return함 
+        //나는 prompt를 이용해 입력한 값을 받고 비교해야한는건줄... 
+        console.log("1. 최솟값을 구하라: ", solution(12, 50, 111))
+
+    //2. 삼각형: 짧은 막대의 2개의 합이 긴막대보다 길어야한다. 
+        function soultion2(a, b, c) {
+            //1. 가장 긴 막대인얘를 어떻게 구하지 (비교하기...)
+            //2. 긴막대얘를 구해서 2개 더한얘들과 긴막대랑 비교하기..
+        //- 누가누가 큰지 비교하기 애매해서 sum 변수를 만들어서 해결을함
+        //기본값은 YES로 하고 조건식에 넣어 작은 경우에는 NO를 넣어줌..! 
+            let sum = a+b+c; //3막대 총합이있음 
+            let answer="YES", max; 
+            // - 가장 큰 값이 max에 저장
+            if(a > b) max = a;
+            else max = b;
+            if(c > max) max = c;
+            //짧은 막대 두개의 합구하기가 애매 ... 왜냐면 누가 max에 들어간지 모름
+            if((sum - max) <= max) answer = "NO";
+            return answer
+        }
+        console.log("2. 삼각형구하기: ", soultion2(2, 7, 11))
+    
+    //3. 
+    </script>
+</body>
+</html>   
