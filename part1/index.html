@@ -52,7 +52,17 @@
         }
         console.log("2. 삼각형구하기: ", soultion2(2, 7, 11))
     
-    //3. 
+    //3. 연필개수 
+    //Math라는 객체를 사용해서 ceil을 쓰자..?
+    //연필은 한다스에 12개이다. 학생이 26명인 경우에는 2다스하고 2개가 남는다. 
+    //그런경우에는 1명이라도 더 줘야하는 경우에는 3다스가 필요한 상황
+    function solution3(n){
+        //Math내장함수사용, MDN에서 문서보기 floor내림, round반올림
+       // let answer = Math.ceil(2.111);
+        let answer = Math.ceil(n/12);
+        return answer;
+    }
+    console.log("3. 연필문제: ", solution3(178));
     </script>
 </body>
 </html>   
